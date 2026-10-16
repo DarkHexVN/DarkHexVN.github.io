@@ -1,57 +1,56 @@
 #!name=All In One
-#!desc=All-In-One tự chứa - 25 script crack premium gộp trong 1 file all-in-one.js. Code lưu local & auto-sync.
-#!author=mora_23099 (repack by Z.ai)
+#!desc=Được tổng hợp bởi mora_23099<br>18 modules: Sub-Store, YouTube, Spotify, SoundCloud, VSCO, Alight, PicsArt, Wink, Truecaller, Lightroom, Kinemaster, CamScanner, BeautyPlus, Locket, RevenueCat, iTunes, Snow, Meitu
+#!author=mora_23099
 #!homepage=https://darkhexvn.github.io/
 #!icon=https://module-ios.netlify.app/assets/img/shadowrocket.webp
 #!category=Utility
 #!tag=shadowrocket
 #!date=2026-10-16
-#!desc=<br>18 modules: Sub-Store, YouTube, Spotify, SoundCloud, VSCO, Alight, PicsArt, Wink, Truecaller, Lightroom, Kinemaster, CamScanner, BeautyPlus, Locket, RevenueCat, iTunes, Snow, Meitu
 
 [Script]
-# Sub-Store
-Sub-Store Core = type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),requires-body=true,timeout=120,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Sub-Store Core"
-Sub-Store Simple = type=http-request,pattern=^https?:\/\/sub\.store,requires-body=true,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Sub-Store Simple"
-Sub-Store Sync = type=cron,cronexp=0 0 * * *,wake-system=1,timeout=120,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Sub-Store Sync"
-# YouTube Premium
-youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=jsc,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="youtube.request"
-youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,engine={{{script}}},script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="youtube.response|||{"lyricLang":"vi","captionLang":"vi","blockUpload":true,"blockImmersive":true,"debug":false}"
-# Spotify Premium
-spotify-json = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="spotify-json"
-spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-update-interval=0,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="spotify-proto"
-# SoundCloud Go+
-SoundCloudGo+ = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="SoundCloudGo+"
-# VSCO
-VSCO = type=http-request,pattern=^https://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$),requires-body=true,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="VSCO"
-# Alight Motion
-AlightMotion = type=http-response,pattern=^https:\/\/us-central1-alight-creative\.cloudfunctions\.net\/getAccountStatusAndLicenses,max-size=131072,requires-body=true,timeout=10,enable=true,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="AlightMotion"
-# PicsArt
-PicsArt = type=http-request,pattern=^https:\/\/api\.picsart\.com\/gw-v2\/shop\/subscription\/apple\/purchases,requires-body=true,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="PicsArt"
-PicsArtStorages = type=http-request,pattern=^https:\/\/api\.picsart\.com\/gw-v2\/cloud-storage\/v1\/me\/storages,requires-body=true,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="PicsArtStorages"
-# Wink
-Wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json,requires-body=1,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Wink"
-# Truecaller
-Truecaller = type=http-response,pattern=^https:\/\/premium-[^.]+\.truecaller\.com\/v\d+\/(subscriptions\/status|products\/apple)(\?.*)?$,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Truecaller"
-# Lightroom
-Lightroom = type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v\d\/accounts,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Lightroom"
-# Kinemaster
-Kinemaster = type=http-response,pattern=^https:\/\/api-account\.kinemasters\.com\/v\d\/user\/subscribe$,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Kinemaster"
-# CamScanner
-CamScanner = type=http-response,pattern=https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="CamScanner"
-# BeautyPlus
-BeautyPlus = type=http-response,pattern=https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.com\/api\/v1\/asset\/balance),requires-body=true,max-size=-1,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="BeautyPlus"
-# Locket Gold
-Locket (RevenueCat) = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,max-size=-1,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Locket (RevenueCat)"
-deleteHeader = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="deleteHeader"
-locket_rc = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,requires-body=true,max-size=-1,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="locket_rc"
-# RevenueCat VIP
-RevenueCatVip = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,max-size=-1,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="RevenueCatVip"
-# iTunes
-iTunes = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=true,max-size=-1,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="iTunes"
-# Snow
-Snow = type=http-response,pattern=^https?:\/\/user-snow-api\.snow\.me\/v\d\/purchase\/subscription\/subscriber\/status,requires-body=true,max-size=-1,timeout=60,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Snow"
-# Meitu
-Meitu = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=1,script-path=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js,argument="Meitu"
+#Sub-Store
+Sub-Store Core = type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),requires-body=true,timeout=120,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/sub-store-1.min.js
+Sub-Store Simple = type=http-request,pattern=^https?:\/\/sub\.store,requires-body=true,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/sub-store-0.min.js
+Sub-Store Sync = type=cron,cronexp=0 0 * * *,wake-system=1,timeout=120,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/cron-sync-artifacts.min.js
+#YouTube Premium
+youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch),requires-body=1,max-size=-1,binary-body-mode=1,engine=jsc,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/youtube.response.js
+youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$,requires-body=1,max-size=-1,binary-body-mode=1,engine={{{script}}},script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/youtube.response.js,argument="{"lyricLang":"vi","captionLang":"vi","blockUpload":true,"blockImmersive":true,"debug":false}"
+#Spotify Premium
+spotify-json = type=http-request,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/spotify-json.js
+spotify-proto = type=http-response,pattern=^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-update-interval=0,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/spotify-proto.js
+#SoundCloud Go+
+SoundCloudGo+ = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/SoundCloudGoPlus.js
+#VSCO
+VSCO = type=http-request,pattern=^https://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$),requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/VSCO.js
+#Alight Motion
+AlightMotion = type=http-response,pattern=^https:\/\/us-central1-alight-creative\.cloudfunctions\.net\/getAccountStatusAndLicenses,max-size=131072,requires-body=true,timeout=10,enable=true,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/AlightMotion.js
+#PicsArt
+PicsArt = type=http-request,pattern=^https:\/\/api\.picsart\.com\/gw-v2\/shop\/subscription\/apple\/purchases,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/PicsArt.js
+PicsArtStorages = type=http-request,pattern=^https:\/\/api\.picsart\.com\/gw-v2\/cloud-storage\/v1\/me\/storages,requires-body=true,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/PicsArtStorages.js
+#Wink
+Wink = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info_by_group\.json,requires-body=1,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/WinkVipCrack.js
+#Truecaller
+Truecaller = type=http-response,pattern=^https:\/\/premium-[^.]+\.truecaller\.com\/v\d+\/(subscriptions\/status|products\/apple)(\?.*)?$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/TrueCaller.js
+#Lightroom
+Lightroom = type=http-response,pattern=^https:\/\/photos\.adobe\.io\/v\d\/accounts,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/lightroom.js
+#Kinemaster
+Kinemaster = type=http-response,pattern=^https:\/\/api-account\.kinemasters\.com\/v\d\/user\/subscribe$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/Kinemaster.js
+#CamScanner
+CamScanner = type=http-response,pattern=https:\/\/(api|api-cs.*)\.intsig\.net\/purchase\/cs\/query_property\?,requires-body=1,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/camScanner.js
+#BeautyPlus
+BeautyPlus = type=http-response,pattern=https:\/\/(api\.mr\.pixocial\.com\/v1\/manual_unlock|newbeee-api\.beautyplus\.com\/api\/v1\/asset\/balance),requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/BeautyPlus.js
+#Locket Gold
+Locket (RevenueCat) = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/Locket_DuyVinh09.js
+deleteHeader = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers),timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/deleteHeader.js
+locket_rc = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/Locket_Unlocked.js
+#RevenueCat VIP
+RevenueCatVip = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$),requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/revenuecat.js
+#iTunes
+iTunes = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$,requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/iTunes.js
+#Snow
+Snow = type=http-response,pattern=^https?:\/\/user-snow-api\.snow\.me\/v\d\/purchase\/subscription\/subscriber\/status,requires-body=true,max-size=-1,timeout=60,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/Snow.js
+#Meitu
+Meitu = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d\/(h\d\/vip|vip|user)\/,requires-body=1,script-path=https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/refs/heads/main/js/MeiTuXiuXiu.js
 
 [Header Rewrite]
 ^https?://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$) header-del x-revenuecat-etag
