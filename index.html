@@ -450,14 +450,14 @@
       <div class="card-head">
         <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="currentColor" stroke-width="1.7"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
         <div>
-          <h2 id="cfgH">Config URL</h2>
+          <h2 id="cfgH">Link Config All_In_One <span style="color:#8a7d52;font-weight:500;font-size:13px;">(.conf)</span></h2>
           <p>Dán link này vào Shadowrocket để thêm cấu hình All In One.</p>
         </div>
       </div>
 
       <div class="url-row">
         <input id="confUrl" class="url-input" type="text" readonly
-          value="https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/All_In_One.conf"
+          value="https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.conf"
           aria-label="URL cấu hình All In One" />
         <button id="copyBtn" class="copy-btn" type="button" aria-label="Sao chép link cấu hình">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M5 15V5a2 2 0 0 1 2-2h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
@@ -465,13 +465,45 @@
         </button>
       </div>
 
-      <a id="addBtn" class="add-btn" href="shadowrocket://add/config?url=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/All_In_One.conf" aria-label="Thêm cấu hình vào Shadowrocket">
+      <a id="addBtn" class="add-btn" href="shadowrocket://add/config?url=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.conf" aria-label="Mở cấu hình trong Shadowrocket">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-        Thêm vào Shadowrocket
+        Mở trong Shadowrocket
       </a>
 
       <label class="src-toggle" for="srcToggle">
         <input type="checkbox" id="srcToggle" />
+        <span class="toggle-track"><span class="toggle-thumb"></span></span>
+        <span>Dùng <b>raw.githubusercontent</b> (nếu jsDelivr chậm)</span>
+      </label>
+    </section>
+
+    <!-- MODULE URL CARD -->
+    <section class="card module-card" aria-labelledby="modCardH" style="margin-top:24px;">
+      <div class="card-head">
+        <div class="card-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <div>
+          <h2 id="modCardH">Link Module All_In_One <span style="color:#8a7d52;font-weight:500;font-size:13px;">(.sgmodule)</span></h2>
+          <p>Import như module Shadowrocket — bật/tắt từng script trong phần Modules.</p>
+        </div>
+      </div>
+
+      <div class="url-row">
+        <input id="modUrl" class="url-input" type="text" readonly
+          value="https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.sgmodule"
+          aria-label="URL module All In One" />
+        <button id="modCopyBtn" class="copy-btn" type="button" aria-label="Sao chép link module">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M5 15V5a2 2 0 0 1 2-2h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span id="modCopyLabel">Sao chép</span>
+        </button>
+      </div>
+
+      <a id="modAddBtn" class="add-btn" href="shadowrocket://install/module?url=https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.sgmodule" aria-label="Mở module trong Shadowrocket">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        Mở trong Shadowrocket
+      </a>
+
+      <label class="src-toggle" for="modSrcToggle">
+        <input type="checkbox" id="modSrcToggle" />
         <span class="toggle-track"><span class="toggle-thumb"></span></span>
         <span>Dùng <b>raw.githubusercontent</b> (nếu jsDelivr chậm)</span>
       </label>
@@ -588,7 +620,7 @@
     <p>Shadowrocket Config · v1.0 · maintained by <a style="color:#e8c873;text-decoration:none;" href="https://t.me/rov230909" target="_blank" rel="noopener noreferrer">@rov230909</a></p>
     <p style="margin-top:4px;font-size:11px;color:#5a5246;">© 2025 DarkHexVN. All product names, logos, and brands are property of their respective owners.</p>
     <div class="f-links">
-      <a class="f-link" href="https://github.com/DarkHexVN/DarkHexVN" target="_blank" rel="noopener noreferrer">
+      <a class="f-link" href="https://github.com/DarkHexVN/DarkHexVN.github.io" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.73-1.56-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.2-3.09-.12-.3-.52-1.46.11-3.04 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.82 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.58.23 2.74.11 3.04.75.81 1.2 1.83 1.2 3.09 0 4.41-2.69 5.39-5.25 5.67.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
         GitHub
       </a>
@@ -609,8 +641,11 @@
     (function () {
       "use strict";
 
-      var URL_JSDELIVR = "https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/All_In_One.conf";
-      var URL_RAW      = "https://raw.githubusercontent.com/DarkHexVN/DarkHexVN/main/All_In_One.conf";
+      var URL_JSDELIVR = "https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.conf";
+      var URL_RAW      = "https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/main/All_In_One.conf";
+
+      var MOD_JSDELIVR = "https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.sgmodule";
+      var MOD_RAW      = "https://raw.githubusercontent.com/DarkHexVN/DarkHexVN.github.io/main/All_In_One.sgmodule";
 
       var confInput   = document.getElementById("confUrl");
       var copyBtn     = document.getElementById("copyBtn");
@@ -621,6 +656,13 @@
       var toastMsg    = document.getElementById("toastMsg");
       var iosHint     = document.getElementById("iosHint");
       var stepsSection = document.querySelector(".steps-section");
+
+      // Module card elements
+      var modInput    = document.getElementById("modUrl");
+      var modCopyBtn  = document.getElementById("modCopyBtn");
+      var modCopyLabel = document.getElementById("modCopyLabel");
+      var modAddBtn   = document.getElementById("modAddBtn");
+      var modSrcToggle = document.getElementById("modSrcToggle");
 
       var toastTimer = null;
       function showToast(msg) {
@@ -637,12 +679,28 @@
         addBtn.setAttribute("href", "shadowrocket://add/config?url=" + encodeURIComponent(currentUrl()));
       }
 
-      // Toggle jsDelivr / raw
+      // Module URL logic (mirror với config card)
+      function currentModUrl() { return modSrcToggle.checked ? MOD_RAW : MOD_JSDELIVR; }
+      function syncModInput() { if (modInput) modInput.value = currentModUrl(); }
+      function syncModDeepLink() {
+        if (modAddBtn) modAddBtn.setAttribute("href", "shadowrocket://install/module?url=" + encodeURIComponent(currentModUrl()));
+      }
+
+      // Toggle jsDelivr / raw (config)
       srcToggle.addEventListener("change", function () {
         syncInput();
         syncDeepLink();
         showToast(srcToggle.checked ? "Đã chuyển sang raw.githubusercontent" : "Đã chuyển sang jsDelivr CDN");
       });
+
+      // Toggle jsDelivr / raw (module)
+      if (modSrcToggle) {
+        modSrcToggle.addEventListener("change", function () {
+          syncModInput();
+          syncModDeepLink();
+          showToast(modSrcToggle.checked ? "Đã chuyển sang raw.githubusercontent" : "Đã chuyển sang jsDelivr CDN");
+        });
+      }
 
       // Copy current URL
       function copyUrl(cb) {
@@ -667,6 +725,17 @@
 
       copyBtn.addEventListener("click", function () { copyUrl(); });
 
+      // Module copy
+      if (modCopyBtn) {
+        modCopyBtn.addEventListener("click", function () {
+          var url = currentModUrl();
+          var done = function () { showToast("Đã sao chép link module!"); };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(done).catch(function () { fallbackCopy(url); done(); });
+          } else { fallbackCopy(url); done(); }
+        });
+      }
+
       // Add to Shadowrocket: copy link before deep link opens (deep link href đã set)
       addBtn.addEventListener("click", function () {
         copyUrl(function () {
@@ -675,6 +744,19 @@
           }
         });
       });
+
+      // Module deep link click: copy + scroll
+      if (modAddBtn) {
+        modAddBtn.addEventListener("click", function () {
+          var url = currentModUrl();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).catch(function () {});
+          }
+          if (stepsSection && stepsSection.scrollIntoView) {
+            stepsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      }
 
       // Click input → select all (UX)
       confInput.addEventListener("focus", function () { this.select(); });
@@ -690,6 +772,8 @@
 
       syncInput();
       syncDeepLink();
+      syncModInput();
+      syncModDeepLink();
 
       // ===== Download handler: fetch blob → trigger download (cross-origin safe) =====
       function downloadFile(url, filename, mirrorUrl, btn, labelSel) {

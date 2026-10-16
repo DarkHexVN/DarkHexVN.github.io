@@ -20,8 +20,8 @@ Không phụ thuộc link `raw.githubusercontent.com/duyvinh09/...` khi runtime 
 
 ### Cách 2: Git CLI
 ```bash
-git clone https://github.com/DarkHexVN/DarkHexVN.git
-cd DarkHexVN
+git clone https://github.com/DarkHexVN/DarkHexVN.github.io.git
+cd DarkHexVN.github.io
 # Copy 2 file vào đây
 git add .
 git commit -m "Add All In One config"
@@ -33,7 +33,7 @@ git push
 1. Mở Shadowrocket → **Config** → dấu **+** → **URL**
 2. Dán link raw của file `.conf`:
    ```
-   https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/All_In_One.conf
+   https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.conf
    ```
 3. Bấm **Download** → chọn file vừa tải → **Edit**
 4. Bật **HTTPS Decryption (MITM)** & cấp chứng chỉ cho các hostname trong `[MITM]`
@@ -41,10 +41,10 @@ git push
 
 ## Link raw (đã chuẩn bị sẵn cho repo này)
 
-- **Config (.conf):** `https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/All_In_One.conf`
-- **Script (all-in-one.js):** `https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN@main/all-in-one.js`
+- **Config (.conf):** `https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/All_In_One.conf`
+- **Script (all-in-one.js):** `https://cdn.jsdelivr.net/gh/DarkHexVN/DarkHexVN.github.io@main/all-in-one.js`
 
-> Repo: `DarkHexVN/DarkHexVN` (branch `main`)
+> Repo: `DarkHexVN/DarkHexVN.github.io` (branch `main`)
 
 ## Cập nhật code
 
