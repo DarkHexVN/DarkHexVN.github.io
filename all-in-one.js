@@ -1,6 +1,6 @@
 /* ============================================================
  * All-In-One Combined Script (Self-Hosted)
- * Sinh lúc: 2026-10-16T12:15:37.664Z
+ * Sinh lúc: 2026-10-16T13:55:53.361Z
  * Nguồn: duyvinh09/Module_IOS + sub-store-org/Sub-Store
  *
  * File này là một dispatcher duy nhất chứa toàn bộ script logic.
@@ -19103,7 +19103,7 @@ const mapping = {
   'Locket': ['Gold']
 };
 // =========   Phần cố định  ========= // 
-// =========  @duyvinh09 ========= // 
+// =========  @mora23099 ========= // 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"],
   obj = JSON.parse($response.body);
 obj.Attention = "Chúc mừng bạn! Vui lòng không bán hoặc chia sẻ cho người khác!";
@@ -19166,7 +19166,7 @@ __AIO_handlers['locket_rc'] = function(__origArg) {
 // Locket Remote Config Rewrite
 // Endpoint: firebaseremoteconfig.googleapis.com
 // Dùng cho: Loon / Quantumult X / Surge / Shadowrocket
-// Tác giả: @duyvinh09
+// Tác giả: @mora23099
 // ============================================================
 
 var ua = $request.headers["User-Agent"] || $request.headers["user-agent"] || "";
@@ -19218,8 +19218,8 @@ if (ua.includes("Locket")) {
             title: "Lên Locket Gold rồi đó 😎",
             feature_set: [
                 {
-                    title: "Nhớ follow kênh tiktok @duyvinh.09 ✨",
-                    body: "Một follow của bạn, một niềm vui của mình 💛",
+                    title: "Nhớ follow kênh tiktok @mora23099 ✨",
+                    body: "Unlock Locket Gold Nguyễn Hoàng Lan Anh💛",
                     imageURL: "https://i.ibb.co/gZ6HkyWT/L-n-Gold-R-i.png"
                 }
             ],
@@ -19233,7 +19233,7 @@ if (ua.includes("Locket")) {
         profile_badge_visible: "true",
         lunar_new_year_app_icon_enabled: "true",
         settings_instagram_url: "https://www.instagram.com/dvinh.09/",
-        settings_tiktok_url: "https://tiktok.com/@duyvinh.09"
+        settings_tiktok_url: "https://tiktok.com/@mora23099"
     });
 
     // ============================================================
@@ -19821,14 +19821,14 @@ __AIO_handlers['RevenueCatVip'] = function(__origArg) {
   /***********************************
 
 > ScriptName        𝐑𝐞𝐯𝐞𝐧𝐮𝐞𝐂𝐚𝐭
-> Author            @duyvinh09
+> Author            @mora23099
 > TgChannel         https://t.me/tienich
 > ScriptURL         https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/revenuecat.js
 
 
 [rewrite_local]
 
-# ～ RevenueCat@duyvinh09
+# ～ RevenueCat@mora23099
 ^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$) url script-response-body https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/revenuecat.js
 ^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers) url script-request-header https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/deleteHeader.js
 
@@ -20017,7 +20017,7 @@ const mapping = {
 };
 
 // =========    Phần cố định  ========= //
-// =========  @duyvinh09 ========= //
+// =========  @mora23099 ========= //
 var _0xodF = "jsjiami.com.v7";
 function _0x52ea(_0x3ea8b3, _0x5559a4) {
   var _0x3b9dd1 = _0x3b9d();
@@ -20212,7 +20212,7 @@ __AIO_handlers['iTunes'] = function(__origArg) {
 
 Tên dự án: Bộ sưu tập mở khóa phim bộ iTunes
 Ngày cập nhật: 14/06/2026
-Tác giả kịch bản: @duyvinh09
+Tác giả kịch bản: @mora23099
 Kênh Telegram: https://t.me/tienich
 Lưu ý: ⚠️Chỉ để tham khảo, 🈲nghiêm cấm sao chép và bán!
 Hướng dẫn sử dụng: Nếu kịch bản không hoạt động, vui lòng kiểm tra xung đột kịch bản trước.
