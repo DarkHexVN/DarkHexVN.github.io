@@ -252,28 +252,6 @@
       .locket-btn { flex-shrink: 0; }
     }
 
-    /* ============ DOWNLOAD ROW ============ */
-    .dl-row {
-      max-width: 720px; margin: 0 auto 12px;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-      animation: rise 1s cubic-bezier(.2,.7,.2,1) 0.18s both;
-    }
-    .dl-anchor {
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 14px 18px; border-radius: 13px; cursor: pointer;
-      font-family: inherit; font-size: 14px; font-weight: 600; letter-spacing: 0.01em;
-      color: #ece4d0; background: rgba(28,24,16,0.55);
-      border: 1px solid rgba(212, 175, 55, 0.25);
-      transition: transform 0.18s cubic-bezier(.2,.7,.2,1), border-color 0.2s, background 0.2s;
-      -webkit-tap-highlight-color: transparent;
-      width: 100%;
-      appearance: none; -webkit-appearance: none;
-    }
-    .dl-anchor:hover { transform: translateY(-2px); border-color: rgba(232,200,115,0.55); background: rgba(40,34,22,0.7); }
-    .dl-anchor:active { transform: translateY(0) scale(0.99); }
-    .dl-anchor svg { width: 17px; height: 17px; color: #e8c873; }
-    .dl-anchor .sub { display: block; font-size: 11px; font-weight: 500; color: #8a8274; margin-top: 1px; }
-
     /* ============ MODULES GRID ============ */
     .modules-section { max-width: 720px; margin: 36px auto 28px; animation: rise 1s cubic-bezier(.2,.7,.2,1) 0.2s both; }
     .section-h {
@@ -634,46 +612,6 @@
       modAddBtn.addEventListener("click", function () {
         copyText(URL_MOD, "Đã copy — đang mở Shadowrocket...");
       });
-
-      // Download handler cho nút Tải .conf / Tải all-in-one.js
-      function downloadFile(url, filename, btn, labelSel) {
-        if (!btn) return;
-        var labelEl = btn.querySelector(labelSel) || btn;
-        var origText = labelEl.textContent;
-        btn.setAttribute("disabled", "disabled");
-        if (labelEl) labelEl.textContent = "Đang tải…";
-
-        function finalize(ok) {
-          btn.removeAttribute("disabled");
-          if (labelEl) labelEl.textContent = ok ? "Đã tải ✓" : origText;
-          showToast(ok ? "Đã tải " + filename : "Tải thất bại — thử lại");
-          if (ok) setTimeout(function () { if (labelEl) labelEl.textContent = origText; }, 3000);
-        }
-
-        fetch(url, { mode: "cors", cache: "no-store" })
-          .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.blob(); })
-          .then(function (blob) {
-            var objUrl = URL.createObjectURL(blob);
-            var a = document.createElement("a");
-            a.href = objUrl; a.download = filename;
-            document.body.appendChild(a); a.click(); document.body.removeChild(a);
-            setTimeout(function () { URL.revokeObjectURL(objUrl); }, 4000);
-            finalize(true);
-          })
-          .catch(function () {
-            window.open(url, "_blank", "noopener,noreferrer");
-            finalize(false);
-          });
-      }
-
-      var dlBtns = document.querySelectorAll(".dl-anchor[data-url]");
-      for (var i = 0; i < dlBtns.length; i++) {
-        (function (btn) {
-          btn.addEventListener("click", function () {
-            downloadFile(btn.getAttribute("data-url"), btn.getAttribute("data-filename"), btn, ".sub");
-          });
-        })(dlBtns[i]);
-      }
     })();
   </script>
 </body>
