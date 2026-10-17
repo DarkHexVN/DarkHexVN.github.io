@@ -55,8 +55,8 @@ if (ua.includes("Locket")) {
             feature_set: [
                 {
                     title: "Nhớ follow kênh tiktok @mora23099 ✨",
-                    body: "Unlock Locket Gold Nguyễn Hoàng Lan Anh💛",
-                    imageURL: "https://i.ibb.co/gZ6HkyWT/L-n-Gold-R-i.png"
+                    body: "Up Locket Gold by Nguyễn Hoàng Lan Anh 💛",
+                    imageURL: "https://cdn.upanhlaylink.com/i/xru4nEZt.png"
                 }
             ],
             primary_button_title: "Xong",
